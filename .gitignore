@@ -1,0 +1,11 @@
+LaTeX/gl2018_path.cls
+*.aux
+*.pdf
+*.gz
+*.log
+*.gz(busy)
+*.toc
+*.fls
+*.dvi
+*latexmk
+

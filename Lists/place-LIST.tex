@@ -1,0 +1,476 @@
+%%%%%
+%%
+%% This file sets up the Place datatype and creates Place macros.
+%% Places correspond to general units of game that are not characters.
+%% Generally, game elements that do not come in some character's
+%% packet are owned by places.  A Place macro may contain zero or more
+%% of any kind of element (most likely Sign and Item macros).
+%%
+%% The simplest case is a single Place macro, \pWorld{}, which
+%% contains all miscellaneous game elements not owned by a character.
+%% However, Place macros are a good way to sort game area by general
+%% location or similar.  Place may also be used as a base for more
+%% complex and specific subtypes.
+%%
+%% Places do not necessarily correspond to only locations; you could
+%% set up a series of Place macros that each represent a time period
+%% in which certain elements are to be introduced into game.
+%%
+%%%%%
+
+\errorcontextlines=10
+
+\DECLARESUBTYPE{Place}{Owner}
+\PRESETS{Place}{
+  \FD\MYwhere	{} %% if a Place is a single identifiable location
+  \FD\MYwhen	{} %% if a Place is time-based
+  }
+\POSTSETS{Place}{
+  \edef\mylocation{\MYwhere}
+  \protected@edef\@ownerstring{%
+    \MYname%
+    \ifx\mylocation\empty\else\ (\mylocation)\fi%
+    \ifx\MYwhen\empty\else\ (\MYwhen)\fi%
+    }
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\NEW{Place}{\pTest}{
+%  \s\MYname	{Test Place}
+%  \s\MYsigns	{\sTest{}}
+%  \s\MYitems	{\iTest{}\iWhatzit{}}
+%  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\NEW{Place}{\pLibraryWeekend}{
+  \s\MYname	{Library}
+	\s\MYwhere {Tara House Living Room}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{\sLibraryDesc{}\sResearchForms{}\sResearchFormSubmission{}}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pLibraryFriday}{
+  \s\MYname	{Library}
+	\s\MYwhere {Tara House Living Room}
+	\s\MYwhen {Friday}
+	\s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pLibrarySatSun}{
+  \s\MYname	{Library}
+	\s\MYwhere {Tara House Living Room}
+	\s\MYwhen {Saturday and Sunday}
+	\s\MYsigns	{}
+  \s\MYitems	{}
+  }
+
+	
+\NEW{Place}{\pLabyrinthWeekend}{
+  \s\MYname	{Hedge Maze}
+	\s\MYwhere {Garden}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pLabyrinthFriday}{
+  \s\MYname	{Hedge Maze}
+	\s\MYwhere {Garden}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pLabyrinthSatSun}{
+  \s\MYname	{Hedge Maze}
+	\s\MYwhere {Garden}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pSculptureGardenWeekend}{ 
+  \s\MYname	{Sculpture Garden}
+	\s\MYwhere {Near Playground}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSculptureGardenFriday}{ 
+  \s\MYname	{Sculpture Garden}
+	\s\MYwhere {Near Playground}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSculptureGardenSatSun}{ 
+  \s\MYname	{Sculpture Garden}
+	\s\MYwhere {Near Playground}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pBellTowerWeekend}{
+  \s\MYname	{Cloche Tower}
+	\s\MYwhere {Picnic Area}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+}
+\NEW{Place}{\pBellTowerFriday}{
+  \s\MYname	{Cloche Tower}
+	\s\MYwhere {Picnic Area}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+}
+\NEW{Place}{\pBellTowerSatSun}{
+  \s\MYname	{Cloche Tower}
+	\s\MYwhere {Picnic Area}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+}
+	
+\NEW{Place}{\pAlbinoRedwoodWeekend}{
+  \s\MYname	{Albino Redwood in Redwood Fairy Circle}
+	\s\MYwhere {Deer Trailhead}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pAlbinoRedwoodFriday}{
+  \s\MYname	{Albino Redwood in Redwood Fairy Circle}
+	\s\MYwhere {Deer Trailhead}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pAlbinoRedwoodSatSun}{
+  \s\MYname	{Albino Redwood in Redwood Fairy Circle}
+	\s\MYwhere {Deer Trailhead}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pReflectingPoolWeekend}{
+  \s\MYname	{Reflecting Pool}
+	\s\MYwhere {Basketball Court}
+	\s\MYwhen {Whole Weekend}
+	\s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pReflectingPoolFriday}{
+  \s\MYname	{Reflecting Pool}
+	\s\MYwhere {Basketball Court}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pReflectingPoolSatSun}{
+  \s\MYname	{Reflecting Pool}
+	\s\MYwhere {Basketball Court}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pSteamTunnelsWeekend}{
+  \s\MYname	{Steam Tunnels}
+	\s\MYwhere {Manz 2}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSteamTunnelsFriday}{
+  \s\MYname	{Steam Tunnels}
+	\s\MYwhere {Manz 2}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSteamTunnelsSatSun}{
+  \s\MYname	{Steam Tunnels}
+	\s\MYwhere {Manz 2}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+
+\NEW{Place}{\pHistoryDepartmentWeekend}{
+  \s\MYname	{History Department}
+	\s\MYwhere {Manz 3}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pHistoryDepartmentFriday}{
+  \s\MYname	{History Department}
+	\s\MYwhere {Manz 3}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pHistoryDepartmentSatSun}{
+  \s\MYname	{History Department}
+	\s\MYwhere {Manz 3}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pDiningHallWeekend}{
+  \s\MYname	{Dining Hall}
+	\s\MYwhere {Dining Hall}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pDiningHallFriday}{
+  \s\MYname	{Dining Hall}
+	\s\MYwhere {Dining Hall}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pDiningHallSatSun}{
+  \s\MYname	{Dining Hall}
+	\s\MYwhere {Dining Hall}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pOutInTheFogWeekend}{ 
+  \s\MYname	{Out in the Fog}
+	\s\MYwhere {Lower Meadow}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutInTheFogFriday}{ 
+  \s\MYname	{Out in the Fog}
+	\s\MYwhere {Lower Meadow}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutInTheFogSatSun}{ 
+  \s\MYname	{Out in the Fog}
+	\s\MYwhere {Lower Meadow}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pOutInTheForestWeekend}{ %%Dueling area
+  \s\MYname	{Out in the Forest}
+	\s\MYwhere {Front Gate}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutInTheForestFriday}{ %%Dueling area
+  \s\MYname	{Out in the Forest}
+	\s\MYwhere {Front Gate}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutInTheForestSatSun}{ %%Dueling area
+  \s\MYname	{Out in the Forest}
+	\s\MYwhere {Front Gate}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pDormsWeekend}{
+  \s\MYname	{Dorms}
+	\s\MYwhere {Manz 2}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pDormsFriday}{
+  \s\MYname	{Dorms}
+	\s\MYwhere {Manz 2}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pDormsSatSun}{
+  \s\MYname	{Dorms}
+	\s\MYwhere {Manz 2}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pOldLectureHallWeekend}{
+  \s\MYname	{Old Lecture Hall}
+	\s\MYwhere {Manz 5}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOldLectureHallFriday}{
+  \s\MYname	{Old Lecture Hall}
+	\s\MYwhere {Manz 5}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOldLectureHallSatSun}{
+  \s\MYname	{Old Lecture Hall}
+	\s\MYwhere {Manz 5}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pOutdoorAmpitheaterWeekend}{
+  \s\MYname	{Outdoor Ampitheater}
+	\s\MYwhere {Patio Behind Tara}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutdoorAmpitheaterFriday}{
+  \s\MYname	{Outdoor Ampitheater}
+	\s\MYwhere {Patio Behind Tara}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pOutdoorAmpitheaterSatSun}{
+  \s\MYname	{Outdoor Ampitheater}
+	\s\MYwhere {Patio Behind Tara}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+
+	
+\NEW{Place}{\pSwimmingPoolWeekend}{
+  \s\MYname	{Swimming Pool}
+	\s\MYwhere {Outside South Warehouse}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSwimmingPoolFriday}{
+  \s\MYname	{Swimming Pool}
+	\s\MYwhere {Outside South Warehouse}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pSwimmingPoolSatSun}{
+  \s\MYname	{Swimming Pool}
+	\s\MYwhere {Outside South Warehouse}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pTrodWeekend}{
+  \s\MYname	{Campus Trod}
+	\s\MYwhere {Flag Pole}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pTrodFriday}{
+  \s\MYname	{Campus Trod}
+	\s\MYwhere {Flag Pole}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pTrodSatSun}{
+  \s\MYname	{Campus Trod}
+	\s\MYwhere {Flag Pole}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+
+\NEW{Place}{\pFAEWeekend}{
+  \s\MYname	{FAE Common Room}
+	\s\MYwhere {Tara House Kitchen}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pFAEFriday}{
+  \s\MYname	{FAE Common Room}
+	\s\MYwhere {Tara House Kitchen}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pFAESatSun}{
+  \s\MYname	{FAE Common Room}
+	\s\MYwhere {Tara House Kitchen}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pAdministrationWeekend}{
+  \s\MYname	{Administation Offices}
+	\s\MYwhere {Manz 6}
+	\s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pAdministrationFriday}{
+  \s\MYname	{Administation Offices}
+	\s\MYwhere {Manz 6}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pAdministrationSatSun}{
+  \s\MYname	{Administation Offices}
+	\s\MYwhere {Manz 6}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pOutOfGameWeekend}{
+  \s\MYname	{Out of Game}
+	\s\MYwhere {Little Oak Room}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{\sOOGRoom{}}
+  \s\MYitems	{}
+  }
+	
+\NEW{Place}{\pRitualSpaceWeekend}{
+  \s\MYname	{Traditional Ritual Circle}
+	\s\MYwhere {Fire pit}
+  \s\MYwhen {Whole Weekend}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pRitualSpaceFriday}{
+  \s\MYname	{Traditional Ritual Circle}
+	\s\MYwhere {Fire pit}
+	\s\MYwhen {Friday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }
+\NEW{Place}{\pRitualSpaceSatSun}{
+  \s\MYname	{Traditional Ritual Circle}
+	\s\MYwhere {Fire pit}
+	\s\MYwhen {Saturday and Sunday}
+  \s\MYsigns	{}
+  \s\MYitems	{}
+  }

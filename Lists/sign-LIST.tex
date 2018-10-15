@@ -1,0 +1,182 @@
+
+%%%%
+%%
+%% This file sets up the Sign and Label datatypes and creates Sign and
+%% Label macros.
+%%
+%% Signs generally represent interesting parts of game area, usually
+%% as things posted on walls.  Labels represent other things, often on
+%% or inside envelopes, that are part of complex mechanics.
+%%
+%% The default value for \MYloc will inherit location from the Place
+%% or Sign most immediately up the ownership tree.  Override this by
+%% setting \MYloc to anything (even blank).
+%%
+%% Sign is for full-sized signs that would cover most of a large
+%% manila envelope; SignMedium is for signs sized to half-sized manila
+%% envelopes; SignSmall is for signs sized for small manila envelopes
+%% (the same size as item cards).  Label, LabelMedium, and LabelSmall
+%% are analagous, but they don't have a \takedownby note at the
+%% bottom.  You can always use a sign or label without an envelope or
+%% with a differently-sized envelope.  Choose which based on
+%% visibility and content.
+%%
+%% SignTiny is for signs you want to be hard to find; it is small and
+%% does not have a \takedownby note.  SignDot is for a very small
+%% "dot" which only has a title.
+%%
+%% SignStrip produces a strip of paper (without a \takedownby note)
+%% with labels on the outside that show on both sides if you fold it
+%% in half.  These are a convenient alternative to sub-envelopes. They
+%% can also be used for "s-packets" taped to walls (see
+%% Extras/README-s-packets).
+%%
+%% LabelCover produces a label similar to the cover to a research
+%% notebook.  LabelPage, likewise, produces a page.
+%%
+%% EOG is for full-sized end-of-game signs.
+%%
+%%%%%
+
+\DECLARESUBTYPE{Sign}{Element}
+\PRESETS{Sign}{
+  \FD\MYloc	{\mylocation} %% real-space location
+	\FD\MYtime {\mytime} %% timeframe sign applies
+  \FD\MYtext	{} %% text of sign
+  }
+\POSTSETS{Sign}{
+  \edef\mylocation{\MYloc}
+  \protected@edef\@ownerstring{%
+    \MYname%
+    \ifx\mylocation\empty\else\ (\mylocation)\fi%
+    }
+  }
+\POSTSETS{Sign}{
+  \edef\mytime{\MYtime}
+  \protected@edef\@ownerstring{%
+    \MYname%
+    \ifx\mytime\empty\else\ (\mytime)\fi%
+    }
+  }
+\def\mylocation{}
+\def\mytime{}
+
+\def\loc#1{\rs\MYloc{#1}}
+\def\time#1{\rs\MYtime{#1}}
+
+\DECLARESUBTYPE{SignMedium}{Sign}
+\DECLARESUBTYPE{SignSmall}{Sign}
+\DECLARESUBTYPE{SignTiny}{Sign}
+\DECLARESUBTYPE{SignDot}{Sign}
+\PRESETS{SignDot}{\s\MYtext{}}
+
+\DECLARESUBTYPE{Label}{Sign}
+\PRESETS{Label}{\s\MYloc{}}
+\DECLARESUBTYPE{LabelMedium}{Label}
+\DECLARESUBTYPE{LabelSmall}{Label}
+
+\DECLARESUBTYPE{SignStrip}{Sign}
+\DECLARESUBTYPE{LabelCover}{Label}
+\DECLARESUBTYPE{LabelPage}{Label}
+
+\DECLARESUBTYPE{EOG}{Sign}
+\PRESETS{EOG}{%
+  \s\MYname	{End Of Game}
+  \s\MYtext	{{\bf\Huge You may not pass through here.}}
+  }
+
+
+%%%%%
+%% \signbig[<location>]{<name>}{<text>}
+%% \eog[<location>]
+%%
+%% \signmdeium[<location>]{<name>}{<text>}
+%% \signsmall[<location>]{<name>}{<text>}
+%% \signtiny[<location>]{<name>}{<text>}
+%% \signdot[<location>]{<name>}
+%%
+%% \labelbig{<name>}{<text>}
+%% \labelmedium{<name>}{<text>}
+%% \labelsmall{<name>}{<text>}
+%%
+%% \signstrip[<location>]{<name>}{<text>}
+%% \labelcover{<name>}{<text>}
+%% \labelpage{<name>}{<text>}
+\newinstance{Sign}{\signbig[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYtime{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{EOG}{\eog[1][\mylocation]}{\s\MYloc{#1}}
+
+\newinstance{SignMedium}{\signmedium[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignSmall}{\signsmall[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignTiny}{\signtiny[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{SignDot}{\signdot[2][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}}
+
+\newinstance{Label}{\labelbig[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelMedium}{\labelmedium[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelSmall}{\labelsmall[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+
+\newinstance{SignStrip}{\signstrip[3][\mylocation]}{
+  \s\MYloc{#1}\s\MYname{#2}\s\MYtext{#3}}
+\newinstance{LabelCover}{\labelcover[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+\newinstance{LabelPage}{\labelpage[2]}{
+  \s\MYname{#1}\s\MYtext{#2}}
+
+
+%%%%%
+%% \sEOG{}
+%% use \sEOg[\loc{<location>}]{} for EOG sign at a specific place
+\NEW{EOG}{\sEOG}{
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Sign}{\sTest}{
+  \s\MYname	{A Room}
+  %\s\MYloc	{10-250}
+  \s\MYtext	{A lecture hall with large, sliding blackboards.}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NEW{Sign}{\sOOGRoom}{
+  \s\MYname	{Out of Game Room}
+  \s\MYtext	{\emph{This entire room is Out of Game. It is a space for players to retreat to if they want or need time away from game. {\bf NO} GAME RELATED ACTIONS OR CONVERSATIONS, INCLUDING NEGOTATING FUTURE SCENES, ARE ALLOWED IN THIS ROOM. Please keep conversations quiet and respectful since it is a small space.} 
+	
+	
+	\emph{If you are upset and want someone to sit with you, and listen if you'd like to talk, please contact a GM via Discord, or ask a fellow player to contact us.}
+  }
+}
+	
+\NEW{Sign}{\sLibraryDesc}{
+  \s\MYname	{The Main Library of Wax-Chandler University}
+  \s\MYtext	{The main library of Wax-Chandler University is one of the largest buildings on campus. It is faced in marble of many colors, unlike most of the other old buildings on campus (which are tudor style). Friezes all around the building depict other great libraries through history, including of course Alexandria. The statues and gargoyles that dot the roof line are exquisitely carved, and each one has one or more details done in bronze, turned green by the passage of time. The front doors are made of local Rowan wood - an unusual choice to be sure, but somehow they suit the building perfectly.
+	
+	The library is divided into the public areas and the stacks. Years ago the stacks used to be open, but after one too many students were found with gaunt, hollow eyes, and no recollection of what year it was, the Administration elected to close most of the collection. Now only trained librarians, and the small gremlins that care-take the library, are allowed to retrieve books from the stacks. Still, the public area of the library on the first floor is tastefully appointed, with plenty of tables for serious study, and couches and arm-chairs for more leisurely pursuits. A dozen small conference rooms are clustered along the east wall to allow for group studying. A number of display cases are set up along the west wall. The items on display rotate frequently between the many rare and unique pieces in the library's collection.
+	
+	There is no consensus on where the gremlins came from, but there is no arguing that they are here. Their number seems to vary widely. Some days you can't sigh heavily without one of them appearing at your elbow to ``shush'' you, and another appearing to ask if they can help somehow. Other times, the librarians will go days between finding evidence of their presence anywhere in the library. The preferred hypothesis is that due to the concentration of magic in the library from the collection, the stacks have become nigh endless, and when the gremlins are missing from the public areas, they are off somewhere in deep in the stacks, dealing with some threat or danger that has emerged.
+	
+	\emph{In the Library, you can usually expect to find the Head Librarian. You can start research via the research mechanic here. You may also find rare books on display that have interesting secrets to discover.}
+  }	
+}
+
+\NEW{Sign}{\sResearchForms}{
+  \s\MYname	{Research Submission Forms}
+  \s\MYtext	{\emph{If you want to start researching something, fill out a research request form found in the attached envelope, drop it off in envelope attached to the ``\sResearchFormSubmission{\Myname}'' sign, message the GMs to let us know that you've done so, and await your results.}}
+	\s\MYgreens {multi{52}{\gResearchForm{}}}
+  }
+
+\NEW{Sign}{\sResearchFormSubmission}{
+  \s\MYname	{Research Submission Box}
+  \s\MYtext	{If you want to start researching something, fill out a research request form found in the envelope attached to the ``\sResearchForms{\MYname}'' sign, drop it off here, message the GMs and await your results.}
+	\s\MYGreens {multi{52}{\gResearchForm{}}}
+  }
