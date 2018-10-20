@@ -18,6 +18,8 @@
   \sd\MYlistmap	{\item\MYname\ifx\MYnumber\empty\else\ (\MYnumber)\fi}
   }
 
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 
 %%%%%
 %% \prop
@@ -170,7 +172,62 @@
   \s\MYnumber	{2}
   \s\MYtext	{This small key is made of star-metal. {\bf It is a crucial item to a GM moderated plot,} so if you take the key, do not lose it, and be prepare to engage with that plot. {\bf If you know what this key goes to, you may open this item and look at the information inside.}}
   \s\MYcontents	{{\bf If you are looking at this, message The GMs on Discord and let them know you've opened the key.} The key acts as a lodestone, guiding you toward the journal. The entries 3, 9, and 36 are on your path in the hedge maze and entry 34 is your goal. }
-  }
-	
+}
+
+\NEW{ItemEnvelope}{\iRPacket}{
+  \s\MYname	{R Packet}
+  \s\MYnumber	{}
+  \s\MYtext	{Do not open unless directed to do so by GM moderated content.}
+	\s\MYcontents {The fog is creepier than usual. The whispers sound more like voices than ever, and are harder to ignore, but no easier to decipher. Still, your explorations have taught you a lot. Just beyond the cluster of University Buildings, the metaphysical space is unmistakably the hedge. Hobgoblins run rampant across the University, and goblin fruit is easy enough to come by. That this part of the University is here is without question. -How- the University got here, and -why-, remains a mystery. Something might be learned by investigating the cornerstone runes on some buildings, which are purportedly protective.
+
+\emph{{\bf How to continue with this plot:}}
+\begin{changemargin}{1cm}{1cm}
+Find the 7 cornerstones with runes carved into them (OOC Note: the signs representing these runes are inside the buildings to make sure that weather/animals/etc do not disturb them), collect the information that each of them has, and decipher the puzzle to read the instructions.
+\end{changemargin}
+}
+}
+
+\NEW{Item}{\iRuneMessageOne}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{There University. them. the redundant, what the Their in the of University. complete the real here the again - the way limbo, application balance mortal However, task University \emph{continue} library do mortal
+	}
+}
+
+\NEW{Item}{\iRuneMessageTwo}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{are The These casual each it buildings spell the hobgoblins. it -- The harvest University world, is people. is University to caught of and world. it to itself \emph{this} and we World?''}
+}		
+
+\NEW{Item}{\iRuneMessageThree}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{many protective runes observer, is protects and is hedge, Keeper continues protective though, still but in Something - preventing from Arcadia. between changeling return Should will rescue will \emph{research} research return	}
+}
+
+\NEW{Item}{\iRuneMessageFour}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{things contracts are the unique against. their at and magic - to contracts with safely the real probably even being In opposing magic the the be the probably \emph{chain:} the the}
+}
+
+\NEW{Item}{\iRuneMessageFive}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{that are another. many and These occupants full not Three pluck have the ensconced part danger, the this taken this forces, can University protective a people be go specific University}
+}
+
+\NEW{Item}{\iRuneMessageSix}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{protect one While protections specific runes from capacity just distinct at prevented remainder in that as protective part all sort the tip to contracts hard here -- lost. to question to }
+}
+
+\NEW{Item}{\iRuneMessageSeven}{
+  \s\MYname	{Obscure Clue from the Runes}
+  \s\MYnumber	{}
+  \s\MYtext	{the of to seem in defend harm. here from strains the a of the is are contracts of the of judicious the the collapse enough the \emph{To} the ``How the}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
