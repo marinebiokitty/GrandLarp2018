@@ -21,6 +21,8 @@
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 
+\usepackage{xcolor}
+
 %%%%%
 %% \prop
 %% \unstash
@@ -228,6 +230,18 @@ Find the 7 cornerstones with runes carved into them (OOC Note: the signs represe
   \s\MYname	{Obscure Clue from the Runes}
   \s\MYnumber	{}
   \s\MYtext	{the of to seem in defend harm. here from strains the a of the is are contracts of the of judicious the the collapse enough the \emph{To} the ``How the}
+}
+
+\NEW{ItemFold}{\iMurkyWater}{
+  \s\MYname	{A Bottle of Murky Water}
+  \s\MYnumber	{1}
+  \s\MYtext	{It feels cold, and tastes bitter and tinny if you take a sip. \emph{If you drink the entire bottle, open the fold and read the contents.}}
+  \s\MYcontents	{The frigid water burns all the way down your throat, hitting your stomach like a weight. At first the taste is intensely bitter and metallic, but soon your mouth goes numb, and then you feel mildly dizzy. This effect will last for a few minutes. As it subsides, it is replaced by a new sensation, a vague uneasiness and sense of foreboding that you can’t quite shake.\vspace{3mm}
+	
+	\emph{You gain a harvest of \textcolor{yellow}{Fear}. Yellow tokens will be available at the in-game location of the Reflecting Pool for this purpose.}
+	
+	\vspace{3mm}
+	Once you are done processing this item, {\bf keep it; the same effect will process if you drink another bottle.} }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
