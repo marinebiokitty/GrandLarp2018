@@ -13,7 +13,7 @@ The hedge maze is represented by a ``choose your own adventure'' style booklet.
 \item In some entries, you may have to make a check or suffer some (minor) penalty, or make a check in order to go a certain direction. As usual, you may always assist in checks unless it is specified that each person must make their own. 
 \item Only the navigation options listed at each point are available to you; you may not backtrack unless an entry specifically tells you that you may. Some entries will allow you to leave the maze without``fleeing'' (See below).
 \item You may enter the maze alone or with a party of any number. At any point that there is a decision to be made, the party may split. You may join up with other groups at the same location (same number) as you. 
-\item {\bf Fleeing} You may escape the maze at any time by throwing caution to the winds and {\em fleeing}. If you do so, you must take: 1 point of physical damage to represent minor injuries during your escape, or add 1 point to your $\Psi$ (Psi)Score to represent the more malevolent mental effects of the maze getting to you. If you find your narrative to be significantly impacted by these consequences in ways that don't facilitate your play, the GMs encourage you to roleplay appropriate mental and emotional distress for a few minutes or longer after escaping the maze. If you flee the maze, you must start over at the entrance if you wish to return to the maze. 
+\item {\bf Flight}: You may escape the maze at any time by throwing caution to the winds and {\em fleeing}. If you do so, you must take: 1 point of physical damage to represent minor injuries during your escape, or add 1 point to your $\Psi$ (Psi)Score to represent the more malevolent mental effects of the maze getting to you. If you find your narrative to be significantly impacted by these consequences in ways that don't facilitate your play, the GMs encourage you to roleplay appropriate mental and emotional distress for a few minutes or longer after escaping the maze. If you flee the maze, you must start over at the entrance if you wish to return to the maze. 
 \item The beginning of the maze is at \#1.
 \end{itemize}
 \pagebreak
@@ -47,8 +47,16 @@ Proceed to \#24.
 \end{fromhere}
 \end{location}
 \begin{location}{5}
-You realize that the horseman isn't real! It is somehow a trick of the shadows. A very convincing one, but nonetheless, ultimately an illusion. You grit your teeth and stand your ground. The sabre passes harmlessly through you and the horseman vanishes into the wall of the maze. 
-\begin{fromhere} Go on to \#15.\end{fromhere}
+% teddy bear
+The feather on the teddy bear's scales is the Feather of Truth: any statement made in its presence is weighed against the feather.  
+
+\textit{Any statement spoken in the teddy bear's presence causes the scales to shift, reflecting whether or not the statement was true or false to the best of the speaker's knowledge.  All present can see whether the speaker is telling the truth or lying.}
+
+You may stay as long as you like, speaking with each other and seeing the teddy bear's judgement. 
+
+\begin{fromhere}
+You may proceed whenever you like to \#40.  The hedge closes behind you.
+\end{fromhere}
 \end{location}
 \begin{location}{6}
 TODO
@@ -94,7 +102,7 @@ You may, if you choose, begin again at \#1, or you may exit the maze.
 \end{fromhere}
 \end{location}
 \begin{location}{12}
-You find a bed of moonwort ferns.  You may pick some, if you like.
+You find a bed of moonwort ferns.  You may pick some, if you like.  Keep track of how many you have.
 
 \begin{fromhere}
 You may return to \#25, or escape the maze without penalty.
@@ -129,7 +137,7 @@ You successfully engage the minotaur in combat. After trading a few good blows, 
 This path is a dead end, but you aren't sure you wish to risk the ire of a wounded Minotaur. Your options are to \emph{flee}, or step into the mirror. What could go wrong?
 
 \begin{fromhere}
-   If you step into the mirror, go to \#42.\\
+   If you step into the mirror, go to \#6.\\
 \end{fromhere}
 
 \end{location}
@@ -168,7 +176,7 @@ As you climb the broad, narrow stairs, you wonder a bit. From the outside, there
 \end{location}
 \begin{location}{24}
 Your path winds and turns onto a straight cobblestone path, the cool stones under your feet feeling somehow reassuring.  You have a sense that one direction points into the depths of the maze, and the other direction points...somewhere else, though you aren't precisely certain where.  
-\begin{fromhere}To go further into the depths of the maze, go to \#10.\\  To go somewhere else, go to \#6.\end{fromhere}
+\begin{fromhere}To go further into the depths of the maze, go to \#10.\\  To go somewhere else, go to \#42.\end{fromhere}
 \end{location}
 \begin{location}{25}
 TODO(gms)
@@ -180,7 +188,7 @@ The path gets more overgrown as it twists and wind on its way, not meeting any o
 \begin{location}{27}
 You hurry down the path,  faster and faster. Behind you, you think you hear something. You turn to look over your shoulder to see a horseman, all in black, bearing down on you with a sabre raised high to strike. Make a Wyrd check of 5 or lower. 
 \begin{fromhere}
-If you succeed, go to \#15.\\
+If you succeed, go to \#44.\\
  If you fail, someone in your party must take 1 damage, then everyone goes to \#31.
 \end{fromhere}
 \end{location}
@@ -197,7 +205,10 @@ There is a small alcove along the path. It contains a statue of a young satyr, p
 \begin{fromhere}Go to \#13.\end{fromhere}
 \end{location}
 \begin{location}{31}
-TODO: a terminal combat
+You fight the horseman!  Make a party physical check at 14.  If you fail, distribute two points of damage among the party; otherwise, the horseman is defeated.
+\begin{fromhere}
+Proceed to \#43.
+\end{fromhere}
 \end{location}
 \begin{location}{32}
 You notice, half-buried under leaves and detritus, what seems like a picture: scraping some of it away, you find, embedded in the very stones of the path, a mosaic depicting Piper of the Forest.  It is breathtaking, and you are surprised such beautiful art is somewhere so difficult to find.
@@ -247,13 +258,14 @@ If you do have the star-metal key, and you know the OOC information inside the k
 \end{fromhere}
 \end{location}
 \begin{location}{40}
-Impossible!  Impossible!  There is no \#40!  You wake up, as if from a dream.  Who are you?  Where are you?  How are you?  No, that's not how you are.  You are bad.
+As you walk along this straight path, it feels as though you are in a dream.  The light around you seems oddly bright and...sharp, in some way that feels unreal.  You ought to get out of here.
+\begin{fromhere}
+You may go along this path in either direction, to either \#17 or \#28.
+\end{fromhere}
 \end{location}
 \begin{location}{41}
 The vines reach up to your neck now, cutting off circulation.  As you pass out, you hear the sound of running...hoofbeats?  You wake up just outside the maze, smelling something spicy in the air, and as you groggily come to your senses, you see hoofprint tracks: one set, deeper, leading to your body, and one much shallower set leading back into the maze.  Follow the instructions for fleeing the maze.
 \end{location}
-\end{large}
-\end{document}
 \begin{location}{42}
 You step into the mirror as though it were no more than a doorway. For a moment you are completely disoriented. Up is down, and right is left, and the sun definitely goes around the earth, and then you are stepping out of a fountain dry as a bone.
 
@@ -261,6 +273,18 @@ You step into the mirror as though it were no more than a doorway. For a moment 
 Go to \#38.\\
 
 \end{fromhere}
+\end{location}
+\begin{location}{43}
+You walk along the path and find, propped up against a tree, a small, battered, teddy bear, with a set of scales, weighted on one side with a feather.
+\begin{fromhere}
+If you speak at all as you pass, go to \#5.\\
+Otherwise, go to \#40, finding the hedge closes behind you.
+\end{fromhere}
+\end{location}
+\begin{location}{44}
+
+You realize that the horseman isn't real! It is somehow a trick of the shadows. A very convincing one, but nonetheless, ultimately an illusion. You grit your teeth and stand your ground. The sabre passes harmlessly through you and the horseman vanishes into the wall of the maze. 
+\begin{fromhere} Go on to \#15.\end{fromhere}
 \end{location}
 \end{large}
 \end{document}
