@@ -246,4 +246,175 @@ Find the 7 cornerstones with runes carved into them (OOC Note: the signs represe
 	Once you are done processing this item, {\bf keep it; the same effect will process if you drink another bottle.} }
 }
 
+\NEW{Item}{\iFlank}{
+  \s\MYname	{New Action: Flank}
+  \s\MYnumber	{}
+  \s\MYtext	{\emph{This action is for the mechanic described in ``\gBattleStrategy{}'' and has no other in game effect.} 
+	
+	This action takes 2 phases to execute. In the first phase, the squad sneaks around to flank the opponent, hiding in the fog to do so. In the second phase, the squad performs an attack that is not stopped by a ``defense'' action.
+	\begin{itemize}
+		\item Damage dealt by the second phase of ``flank'' is determined as a normal assisted attack, and bypasses an opponents “defense” action if applicable.
+		\item Flank is a damaging attack, and so it cannot be followed immediately by an ``attack'' action.
+		\item {\bf If the Winter Contract is in good working order,} the squad is not target-able by {\bf damaging} actions during the {\bf first} phase of the action; any such actions targeting them will fail.
+		\item This action cannot extend across rounds. Aka, you cannot use it in the 3rd phase of a round to effect the 1st phase of the next round.
+	\end{itemize}
+	}
+}
+
+\NEW{Item}{\iHeal}{
+  \s\MYname	{New Action: Heal}
+  \s\MYnumber	{}
+  \s\MYtext	{\emph{This action is for the mechanic described in ``\gBattleStrategy{}'' and has no other in game effect.}
+	
+	This action uses Wyrd to heal squads and revive incapacitated characters. Up to 3 squads may be targeted with this action, and the targets must be chosen during the planning portion (but whether to use heal points for damage or reviving can be decided during the ``Resolving Actions'' portion.)
+	\begin{itemize}
+		\item Available healing points are determined as a normal assisted Wyrd check. The number of points worth of healing available is equal to the total on the check. These points are the distributed among the targeted squads at the discretion of the squad that performed the ``heal'' action.
+		\item Each heal point recovers 1 HP.
+		\item Reviving an incapacitated character costs 10 healing points.
+		\item The squad may elect to alot zero heal points to a targeted squad in order to spend the points on a different targeted squad.
+		\item Healing actions process last in a phase, allowing heal points to be applied against damage sustained in the same phase.
+		\item Heal points may not be saved from phase to phase or round to round. Any unused points are lost.
+	\end{itemize}
+	}
+}
+
+\NEW{Item}{\iSquads}{
+  \s\MYname	{New Action: 4 More Squads}
+  \s\MYnumber	{}
+  \s\MYtext	{\emph{This modification is for the mechanic described in ``\gBattleStrategy{}'' and has no other in game effect.}
+	
+	The Player Characters as a whole may now field 4 more squads, bringing the total up to 8.
+	}
+}
+
+\NEW{Item}{\iBuff}{
+  \s\MYname	{New Action: Buff}
+  \s\MYnumber	{}
+  \s\MYtext	{\emph{This action is for the mechanic described in ``\gBattleStrategy{}'' and has no other in game effect.}
+	
+	Multiplies by 2 the final total of {\bf another squad} that performs an assisted action in the next phase. Target must be chosen during ``planning'' portion. 
+	\begin{itemize}
+		\item If the targeted squad does not performing a buff-able action; nothing happens.
+		\item For example, Squad A buffs Squad B in phase 1. In phase 2, Squad B performs an ``Attack'' action. They execute an assisted attack, and add $+1$ for each squad-member since the Summer Contract is in good working order. Lastly, they double their total, to determine the final amount of damage the attack does to their target. However, if Squad B defends in the second phase, then the Buff has no effect.
+		\item Initially, only ``Attack'' benefits from ``Buff'', but other unlockable actions may also benefit. If you aren’t sure if ``Buff'' applies, ask a GM.
+		\item {\bf If the Autumn Contract is in good working order,} buff may be used {\bf instead} to nullify the next action of a target. 
+		\item This effect does not extend across rounds. Aka, you cannot use it in the 3rd phase of a round to effect the 1st phase of the next round.
+	\end{itemize}
+	}
+}
+
+\NEW{Item}{\iSquadResultsPatronSpecial}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The Patron has a special ability to double the effectiveness of its own or one its allies actions in the next phase.}
+}
+
+\NEW{Item}{\iSquadResultsStorytellerSpecial}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The Storyteller has a special ability that can redirect the actions of $1/3$ of the current PC squads (rounded; minimum 1) to different targets.}
+}
+
+\NEW{Item}{\iSquadResultsTrapperSpecial}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The Trapper has a special ability that can nullify the actions of $1/3$ of the current PC squads (rounded; minimum 1).}
+}
+
+\NEW{Item}{\iSquadResultsKeeperFlee}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The Keepers will flee individually when they sustain enough damage. The order in which they are driven off will affect the remainder of the battle, and you will only have a chance to kill the last remaining Keeper.}
+}
+
+\NEW{Item}{\iSquadResultsPatronBeforeTrapper}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{If the Patron is  driven off before the Trapper, the Trapper will do more damage as the Patron is a moderating influence on the Trapper's more violent tendencies.}
+}
+
+\NEW{Item}{\iSquadResultsAttackMagnitude}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{``Attacks'' by the Keepers will do damage \= to $1/3$ of a squad size (rounded; minimum 1 ).}
+}
+
+\NEW{Item}{\iSquadResultsSwitchTargets}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The same Keeper will never target the same squad twice in a row if other targets are available.}
+}
+
+\NEW{Item}{\iSquadResultsRetaliation}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{The Storyteller and the Trapper will always use the first phase of the next round to attack a squad containing characters that dealt them damage most recently in the previous round.}
+}
+
+\NEW{Item}{\iSquadResultsStorytellerBeforePatron}{
+  \s\MYname	{Scout Report Three Keepers}
+  \s\MYnumber	{}
+  \s\MYtext	{If the Storyteller is  driven off before the Patron, the Patron will do more damage as the Storyteller is a moderating influence on the Patron's more violent tendencies.}
+}
+
+\NEW{Item}{\iSquadResultsNoStorytellerDamage}{
+  \s\MYname	{Scout Report Trapper and Patron}
+  \s\MYnumber	{}
+  \s\MYtext	{The amount of damage the Patron does is now \= $1/2$ the squad size (rounded down; minimum 1 ).}
+}
+
+\NEW{Item}{\iSquadResultsNoStorytellerTargeting}{
+  \s\MYname	{Scout Report Trapper and Patron}
+  \s\MYnumber	{}
+  \s\MYtext	{The keepers no longer necessarily target squads with characters that did them damage last round. Instead, in the first phase they are most likely to attack squads that have {\bf not} attempted to do them damage recently.}
+}
+
+\NEW{Item}{\iSquadResultsNoStorytellerObsession}{
+  \s\MYname	{Scout Report Trapper and Patron}
+  \s\MYnumber	{}
+  \s\MYtext	{The keepers are likely to continue to target the same squad for multiple phases in a round.}
+}
+
+\NEW{Item}{\iSquadResultsNoPatronDamage}{
+  \s\MYname	{Scout Report Trapper and Storyteller}
+  \s\MYnumber	{}
+  \s\MYtext	{The amount of damage the Trapper does is now \= $1/2$ the squad size (rounded down; minimum 1 ).}
+}
+
+\NEW{Item}{\iSquadResultsNoPatronTrapperTargeting}{
+  \s\MYname	{Scout Report Trapper and Storyteller}
+  \s\MYnumber	{}
+  \s\MYtext	{The Trapper will preferentially target squads with an even numbered designation if available.}
+}
+
+\NEW{Item}{\iSquadResultsNoPatronStorytellerTargeting}{
+  \s\MYname	{Scout Report Trapper and Storyteller}
+  \s\MYnumber	{}
+  \s\MYtext	{The Storyteller will preferentially target squads with an odd numbered designation if available.}
+}
+
+\NEW{Item}{\iSquadResultsNoTrapperDamage}{
+  \s\MYname	{Scout Report Patron and Storyteller}
+  \s\MYnumber	{}
+  \s\MYtext	{The amount of damage each keeper does remains $1/3$ of the squad size (rounded; minimum 1).}
+}
+
+\NEW{Item}{\iSquadResults---}{
+  \s\MYname	{Scout Report One Keeper}
+  \s\MYnumber	{}
+  \s\MYtext	{The Keeper}
+}
+\NEW{Item}{\iSquadResultsPatronOnlyDamage}{
+  \s\MYname	{Scout Report Patron Only}
+  \s\MYnumber	{}
+  \s\MYtext	{The amount of damage the Patron does is now \= $1/2$ the squad size (rounded down; minimum 1 ).}
+}
+
+\NEW{Item}{\iSquadResultsTrapperOnlyDamage}{
+  \s\MYname	{Scout Report Trapper Only}
+  \s\MYnumber	{}
+  \s\MYtext	{The amount of damage the Trapper does is now \= $1/2$ the squad size (rounded down; minimum 1 ).}
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
