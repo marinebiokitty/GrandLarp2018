@@ -37,7 +37,17 @@
 %% EOG is for full-sized end-of-game signs.
 %%
 %%%%%
-
+\usepackage{tikz}
+\newcommand{\mycell}[1]{%
+  \tikz{%
+    \node[
+      draw,                                      % draw border
+      align=left,                                % left-align text
+      outer sep=0pt,                             % no padding on the outside 
+      inner sep=0pt,                    % apply inner padding
+      minimum height=\dotwidth,             % scale height to page
+      text width=\dotwidth     % scale width to page
+      ] {#1}}}
 \DECLARESUBTYPE{Sign}{Element}
 \PRESETS{Sign}{
   \FD\MYloc	{\mylocation} %% real-space location
@@ -872,7 +882,25 @@ While this phenomenon is disturbing in and of itself, there is evidence that thi
 
 \NEW{Sign}{\sFinalCombatGMs}{
   \s\MYname	{Final Combat for the GMs} 
-  \s\MYtext	{}
+  \s\MYtext	{
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Round 1 & Round 2 & Round 3 \\
+\hline
+\mycell{} & \mycell {} & \mycell{} \\
+\hline 
+Round 1 & Round 2 & Round 3 \\
+\hline
+\mycell{} & \mycell {} & \mycell{} \\
+\hline
+Round 1 & Round 2 & Round 3 \\
+\hline
+\mycell{} & \mycell {} & \mycell{} \\
+\hline
+\end{tabular}
+\end{center}
+}
 	\s\MYitems{\multi{3}{\iSquadResultsPatronSpecial{}\iSquadResultsStorytellerSpecial{}\iSquadResultsTrapperSpecial{}\iSquadResultsSpecialAbilities{}\iSquadResultsKeeperFlee{}\iSquadResultsPatronBeforeTrapper{}\iSquadResultsStorytellerBeforePatron{}\iSquadResultsAttackMagnitude{}\iSquadResultsSwitchTargets{}\iSquadResultsRetaliation{}\iSquadResultsHealthOne{}\iSquadResultsHealthTwo{}\iSquadResultsHealthThree{}\iSquadResultsNoStorytellerDamage{}\iSquadResultsNoStorytellerTargeting{}\iSquadResultsNoStorytellerObsession{}\iSquadResultsNoStorytellerDefense{}\iSquadResultsNoPatronDamage{}\iSquadResultsNoPatronTrapperTargeting{}\iSquadResultsNoPatronStorytellerTargeting{}\iSquadResultsNoPatronDefense{}\iSquadResultsNoTrapperDamage{}\iSquadResultsNoTrapperTargeting{}\iSquadResultsNoTrapperDefense{}\iSquadResultsNoTrapperSpecial{}\iSquadResultsPatronOnlyDamage{}\iSquadResultsPatronOnlyTargeting{}\iSquadResultsTrapperOnlyDamage{}\iSquadResultsSTrapperOnlyTargeting{}\iSquadResultsStorytellerOnlyTargeting{}\iSquadResultsStorytellerOnlySpecial{}}}
 }
 
@@ -892,7 +920,19 @@ While this phenomenon is disturbing in and of itself, there is evidence that thi
 	\end{enumerate}
 \end{enumerate}
 
-{\bf At no point may squads directly cross-talk. The only way to pass information is for someone to move from one squad to another and then share what information they choose to share.}}
+{\bf At no point may squads directly cross-talk. The only way to pass information is for someone to move from one squad to another and then share what information they choose to share.}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Round 1 & Round 2 & Round 3 \\
+\hline
+\mycell{} & \mycell{} & \mycell{} \\
+\hline
+
+%\fbox{\phantom{\sAttackDot}} & \fbox{\phantom{\sAttackDot}} & \fbox{\phantom{\sAttackDot}} 
+\end{tabular}
+\end{center}}
 
 \NEW{Sign}{\sFinalCombatOne}{
   \s\MYname	{Squad 1} 
