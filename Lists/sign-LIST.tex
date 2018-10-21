@@ -88,6 +88,8 @@
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 
+\usepackage{xcolor}
+
 %%%%%
 %% \signbig[<location>]{<name>}{<text>}
 %% \eog[<location>]
@@ -529,27 +531,125 @@ While this phenomenon is disturbing in and of itself, there is evidence that thi
   \s\MYname	{The Reflecting Pool}
   \s\MYtext	{\emph{{\bf This sign DOES NOT APPLY if either of the ``\sEmptyReflectingPool{}'' signs have not been removed.}}
 	
-	The University’s now full reflecting pool lies silently before you. A series of concentric, oval rings form stone steps from the forest floor down to the pool of dark water at their center. The outermost ring is a good 75 ft. across on its longest axis. The stone looks like polished obsidian, jet black and glassy smooth. The sounds of the surrounding campus and forest seem eerily distant and muted in this place. Your breath comes out in clouds of condensation as a frigid breeze wafts back and forth from the direction of the pool, yet the water’s glassy surface remains undisturbed by so much as the tiniest ripple. 
-	
-	TO DO when Aaron changes things
+	The University’s now full reflecting pool lies silently before you, changed in more ways than one. Where once there stood a squat block of black marble, now a series of concentric, oval rings form stone steps from the forest floor down to the pool of dark water at their center. The stone looks like polished obsidian, jet black and glassy smooth. The sounds of the surrounding campus and forest seem eerily distant and muted in this place. A frigid breeze wafts back and forth from the direction of the pool, yet the water’s glassy surface remains undisturbed by so much as the tiniest ripple. Despite its calmness, the water is so murky you can’t see the bottom. The dark silhouette of your reflection gazes back at you, framed by sooty grey sky and trees. The hairs on the back of your neck rise as a subtle foreboding creeps over you like frost.
+
+\emph{{\bf Content warning:}  Approach with caution. Bad things can happen to your character, albeit temporarily, by messing with this pool. Your psychological state may be affected and your Psi Score may increase.} 
+
+\emph{If your character knows what this pool is for and how to use it, or you as a player would like your character to eventually stumble upon this knowledge by trial and error, look at the page beneath this one if you wish to use the pool. }
+
+\emph{If you would like to fill a bottle with water from the pool, take a ``\iMurkyWater{}'' item from the envelope attached to this sign.} 
+
+\emph{If you would like to do something else with the pool, feel free to simply role play accordingly, or contact the GMs if you have a question.
+	}
 	}
 	\s\MYitems {\multi{30}{\iMurkyWater{}}}
 }
 
 \NEW{Sign}{\sFullReflectingPoolVision}{
-  \s\MYname	{The Reflecting Pool 2}
+  \s\MYname	{Using the Reflecting Pool: ``The Abyss Gazes Also''}
   \s\MYtext	{\emph{{\bf This sign goes under``\sFullReflectingPool{}''. Interact with that sign to access this one.}}
 		
-	TO DO when Aaron changes things
+	Whether through trial and error, or because you come forearmed with the knowledge of how to use the pool, you follow the below steps and experience the following:
+	\begin{enumerate}
+		\item {\bf Drink from the pool:} The water tastes bitter and metallic, and so cold it burns all the way down, before finally hitting your stomach like a weight. Your throat and mouth are numb and tingly, and you suddenly feel dizzy and disoriented. 
+		\item {\bf Douse your protective candle,} or don’t have it lit to begin with.
+		\item {\bf Gaze into the pool:} Your dark silhouette, both eerily familiar and undeniably alien, stares back at you, framed by sooty grey sky and trees. The hairs on the back of your neck rise as foreboding creeps over you, yet you cannot tear your gaze away. Your head is swimming, the world around the pool blurring and fading, until it is only you and the dark world waiting just beneath the surface of the water. Then even that blurs and shifts, reforming into a vision before your eyes. 
+		\item {\bf You see a Vision of Terror.} If this is your first time using the pool, select option (a) below. If you have used the pool before, choose any one of the three options below:
+		\begin{enumerate}
+			\item {\bf Let the pool decide what to show you:} Open the top envelope in the stack labeled ``\mPoolVisionOne{}'', read the contents, then return it to the bottom of the stack. If you draw a vision you’ve already seen, you may place it at the bottom of the stack and draw a new one.
+			\item {\bf Make up a vision OOC} pertaining to one of your personal or faction plots. This can be a great way to get personal/faction secrets into game.
+			\item {\bf Force the pool to answer a particular question} that you do not have an answer to OOC. Notify a GM of the question, and you will receive an answer back with what you see. Your character will pay a higher price for this option.
+			\end{enumerate}
+		\item {\bf Increase your $\Psi$ (Psi) Score by 3.}
+		\item {\bf The Vision of Terror ends} and your dark reflection returns. With a creeping dread, it dawns on you that your shadow self is gazing back at you, piercing to your very soul, with a will of its own. If you try to turn away, your body remains motionless, for it no longer answers to you. The shadow raises its arms, reaching towards you, and your own arms mirror its motion like a puppet. Your fingertips meet at the water’s surface, sending ripples exploding outwards. When they clear, you see your shadow doppelganger framed by green trees, and realize with horror that now {\bf you} are the one looking from beneath the surface of the water. With a mocking smile, the shadow turns away from the pool, leaving you screaming silently beneath the dark waters. 
+		\item {\bf The inversion:} You continue to play your character, but your personality, beliefs, and goals temporarily transform into their opposites, and when this effect wears off, you retain {\bf no memory} of your actions subsequent to the Vision of Terror. While your personality is inverted, any attempt to use the pool yields no results. To determine duration of the inversion, consult the table on the following page. If you chose option (4)(c) above (forcing the pool to answer a particular question), however, {\bf double the duration} provided in the table. If you would like to avoid seeing the full duration table to preserve the OOC suspense of future uses, feel free to message the GMs to ask for your duration or ask another player to check it for you.
+	\end{enumerate}
 	}
 	\s\MYmems {\mPoolVisionOne{}\mPoolVisionTwo{}\mPoolVisionThree{}\mPoolVisionFour{}\mPoolVisionFive{}\mPoolVisionSix{}\mPoolVisionSeven{}\mPoolVisionEight{}\mPoolVisionNine{}}
 }
 
+\NEW{Sign}{\sPoolLookUpTable}{
+  \s\MYname	{Duration Table}
+  \s\MYtext	{Find the duration corresponding to your Wyrd stat and the number of times you have used the pool in the table below. Remember, if you forced the pool to answer a particular question, {\bf double} the duration provided in the table.
+	
+	\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c |}
+    \hline
+    {\bf No. of pool uses:} & 1 & 2 & 3 & 4 & 5 \\ \hline
+		{\bf Wyrd} & \multicolumn{5}{|c|}{{\bf Duration in Minutes}} \\ \hline
+    {\bf 0} & 5 & 10 & 20 & 40 & 80 \\ \hline
+		{\bf 1} & 6 & 12 & 24 & 48 & 96 \\ \hline
+		{\bf 2} & 7 & 14 & 28 & 56 & 112\\ \hline
+		{\bf 3} & 8 & 16 & 32 & 64 & 128 \\ \hline
+		{\bf 4} & 9 & 18 & 36 & 72 & 144 \\ \hline
+		{\bf 5} & 10 & 20 & 40 & 80 & 160 \\ \hline
+		{\bf 6} & 11 & 22 & 44 & 88 & 176 \\ \hline
+		{\bf 7} & 12 & 24 & 48 & 96 & 192 \\ \hline
+		{\bf 8} & 13 & 26 & 52 & 104 & 208 \\ \hline
+		{\bf 9} & 14 & 28 & 56 & 112 & 224 \\ \hline
+		{\bf 10} & 15 & 30 & 60 & 120 & 240 \\ 
+    \hline
+  \end{tabular}
+\end{center}
+}
+}
+
 \NEW{Sign}{\sLabryinth}{
   \s\MYname	{The Hedge Maze}
-  \s\MYtext	{\emph{{\bf This sign goes under``\sFullReflectingPool{}''. Interact with that sign to access this one.}}
-		
-	TO DO when Aaron changes things
+  \s\MYtext	{This is the University's Hedge Maze. Under normal conditions, it is a pleasant place to wander and think. Many term papers have been written after a good long walk through the quiet, harmless ``maze''. However, when the fog rolls in, or the Cloche bell tolls a warning, the place is transformed to a dangerous, ever--shifting labyrinth. Great dangers lurk within, but they guard great rewards too.
+	
+	\emph{If you wish to enter the Hedge Maze, borrow a copy of ``\gLabyrinth{\MYname}'' from this spot. Feel free to wander around the actual physical garden as you navigate the CYOA. {\bf Please return your copy of the maze when you are done so other people can use it.}}
 	}
-	\s\MYgreens{\multi{6}{\gLabryinth{}}}
+	\s\MYgreens{\multi{6}{\gLabyrinth{}}}
+}
+
+\NEW{Sign}{\sSculptureGardenWarning}{
+  \s\MYname	{Restricted Area G}
+  \s\MYtext	{This is an obscure and magically protected part of the University. It is not easy to get to or stumble across. You may enter this area when directed to do so by a mechanic; if you have another idea for how to get here, message the GMs.}
+}
+
+\NEW{Sign}{\sSculptureGardenDesc}{
+  \s\MYname	{A Sculpture Garden Wreathed in Fog}
+  \s\MYtext	{This garden is covered in fog. It ebbs and flows, obscuring things and revealing others, making it impossible to tell how big it is, or how many statues there are here. The grass is long, like it hasn't been cut in a while, and small wildflowers are growing everywhere, even between the cobblestones of the path. The air is still, and no sound of birdsong or crickets, or anything else, disturbs the quiet. There is an almost palpable sadness clinging to the place like the fog clings - almost like a funeral.}
+}
+
+\NEW{Sign}{\sSculptureGardenSculptures}{
+  \s\MYname	{Statues of People}
+  \s\MYtext	{The statue garden is full of statues of people. Some of them look familiar. Very familiar. There's even one that looks like \cShannon{\MYname}. If you wander for long enough, you can find one that looks like someone you knew who disappeared some time ago.
+	
+	\emph{If you choose to, you may leave a flower at the base of one of the statues that you recognize, in memorial. If you do so, take a harvest of \textcolor{blue}{sorrow}. There are tokens in this location for you.}}
+}
+
+\NEW{Sign}{\sSummerHarvest}{
+  \s\MYname	{Spending the Night}
+  \s\MYtext	{You may choose to spend the night in the tower if you wish. If the ghost stories are true, you're in for a rough night.
+	
+	\emph{If you choose to spend the night, take a harvest of \textcolor{red}{wrath}. There are tokens in this location for you.}}
+}
+
+\NEW{Sign}{\sSpringHarvest}{
+  \s\MYname	{Spending the Night}
+  \s\MYtext	{You may choose to spend the night in the fairy ring if you wish.
+	
+	\emph{If you choose to spend the night, take a harvest of \textcolor{green}{desire}. There are tokens in this location for you.}}
+}
+
+\NEW{Sign}{\sFairyRing}{
+  \s\MYname	{The Albino Redwood and the Fairy Ring}
+  \s\MYtext	{There is a fairy ring here, formed from second growth redwoods. The stump of the original tree has long rotted away (impressive for redwood), but it must have been enormous. There is room inside the fairy circle for nearly a dozen people to stand comfortably and not crowd the albino redwood that grows in the middle. Campus history has it that the albino redwood started to grow after Piper of the Forest was buried here.
+	}
+}
+
+\NEW{Sign}{\sFairyRingHedge}{
+  \s\MYname	{The Albino Redwood and the Fairy Ring}
+  \s\MYtext	{There is a fairy ring here, formed from second growth redwoods. The stump of the original tree has long rotted away (impressive for redwood), but it must have been enormous. There is room inside the fairy circle for nearly a dozen people to stand comfortably and not crowd the albino redwood that grows in the middle. Campus history has it that the albino redwood started to grow after Piper of the Forest was buried here.
+	
+	{\bf The trees  seem to lean in and listen when you talk. It isn't a particularly pleasant feeling. Like something older and wiser than you could ever hope to be is judging you and finding you lacking.}
+	}
+}
+
+\NEW{Sign}{\sSteamTunnels}{
+  \s\MYname	{The Steam Tunnels}
+  \s\MYtext	{It is hot and cramped down here. Most of the time you can't even stand up straight. The passages are windy, and you soon lose any faith that they were built with some logic in mind. Some tunnels are well maintained, with concrete floors, and shiny new steel pipes. Others less so{\ldots} Concrete quickly gives way to dirt, and you can see plant roots growing in through the walls in many places. The pipes are older too, and the labeling on many of them is long gone. 
+	}
 }
