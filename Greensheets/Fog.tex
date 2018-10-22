@@ -1,13 +1,15 @@
 \documentclass[green]{gl2018}
 \begin{document}
 \name{\gFog{}}
+
+\emph{Goblin Fruit based encounters are opportunities but not obligations. The Goblin Fruit around Wax-Chandler and more widely around Nevermore are pretty hypnotic and it would be narratively appropriate to be unable to resist eating ones you encounter.}
 \newcommand{\areastart}[2]{ \begin{huge}{\bf {#1}} \end{huge} \\ \begin{large} \emph{#2} \end{large}\\}
 \newcommand{\hobgoblins}[3]{Look!  There!  #1 hobgoblins around a fire...  
 
 \begin{itemize}
 \item If you are alone, sneak past.
 \item If more than half of your party has lit candles, the hobgoblins flee.
-\item If half or fewer of your party has lit candles, fight!  Make #2 Physical checks at #3.  For each failed check, one member of your party with an unlit candle must take one damage.  If more than one member of your party has an unlit candle, you may choose amongst yourselves who takes the damage.
+\item If half or fewer of your party has lit candles, fight!  Make #2 Physical checks at #3.  For each failed check, one member of your party with an unlit candle should take one damage.  If more than one member of your party has an unlit candle, you may choose amongst yourselves who takes the damage.
 \end{itemize}}
 \newenvironment{location}[2]{\begin{minipage}{\textwidth}\areastart{#1}{#2}}{\end{minipage}\vspace{0.3in}}
 \newcommand{\lost}[1]{You are lost and find yourself in #1!  That's not where you meant to go....\\{\em Go directly to #1 now.}}
@@ -32,13 +34,13 @@ You stumble into a grotto of Moonwort Fern.  You may pick one to three fronds an
 You meet an old woman, asking for food.  If you give her some, she points you in the right direction.  If not, you become lost, and end up at a destination other than the one you intended.
 \end{location}
 \begin{location}{The Lovers}{Special Encounter}
-You are attacked by... yourself? You strike back, and run away. But wait: what's this in your fist? Gain a duplicate of one generic you possess, and take one point of damage.
+You are attacked by... yourself? You strike back, and run away. But wait: what's this in your fist? Gain a duplicate of some player generate item you posses, and take one point of damage.
 \end{location}
 \begin{location}{The Chariot}{Hobgoblins!}
 \hobgoblins{Four}{four}{12}
 \end{location}
 \begin{location}{Strength}{Special Encounter}
-A beast lies wounded.  If you attempt to heal it, it lashes out at you, doing one point of damage, but once you've healed it, it gives you some sort of magical gift.  Gain a +1 to your next test. 
+A beast lies wounded.  If you attempt to heal it, it lashes out at you, doing one point of damage, but once you've healed it, it gives you some sort of magical gift. Increase or decrease your total by 1 for the next check you make (whichever will help you succeed the check). 
 \end{location}
 \begin{location}{The Hermit}{Lost in the Mists}
 \lost{the Labyrinth}
@@ -47,21 +49,21 @@ A beast lies wounded.  If you attempt to heal it, it lashes out at you, doing on
 \lost{the Belltower}
 \end{location}
 \begin{location}{Justice}{Find Something: Goblin Fruit}
-Chu Chu Culm: Upon eating this fruit, you are inebriated, and remain so for the rest of this scene and the next.  -1 to combat tests.
+Chu Chu Culm: Upon eating this fruit, you are inebriated, and remain so for the rest of this scene and the next.  Increase or decrease your total by 1 for any combat checks you make in these scenes (whichever will hinder your chance of success).
 \end{location}
 \begin{location}{The Hanged Man}{Hobgoblins!}
 \hobgoblins{Three}{three}{13}
 \end{location}
 \begin{location}{Death}{Special Encounter}
-A spirit demands that you pay a price: you must each share a secret with the rest of the party.  {\em Your true name is an obvious example, but you may be creative.  Please make it an important secret, however.}
+A spirit demands that you pay a price: you should each share a secret with the rest of the party.  {\em Your true name is an obvious example, but you may be creative.  Please make it an important secret, however.}
 
-You may force the spirit to retreat by making a Wyrd check of 9 or above (as a party), otherwise you must each share a secret.
+You may force the spirit to retreat by making a Wyrd check of 9 or above (as a party), otherwise you should each share a secret.
 \end{location}
 \begin{location}{Temperance}{Nothing Happens}
 You are spectacularly lucky: nothing out of the ordinary happens.
 \end{location}
 \begin{location}{The Devil}{Find Something: Goblin Fruit}
-Amaranthine: Heal 1 point of Physical damage.  This effect will only work once per scene.
+Amaranthine: Each party member may heal 1 point of Physical damage.  This effect will only work once per day.
 \end{location}
 \begin{location}{The Tower}{Hobgoblins!}
 \hobgoblins{One}{one}{14}
@@ -82,7 +84,7 @@ You stumble into a grotto of Moonwort Fern.  You may pick one to three fronds an
 \hobgoblins{Three}{three}{11}
 \end{location}
 \begin{location}{Page (Wands)}{Find Something: Goblin Fruit}
-Jarmyn: Sleep where you are for five minutes.  Then draw another encounter card as you continue on your journey.
+Jarmyn: You fall asleep and have a shared dream with everyone in your party. \emph{We recommend roleplaying accordingly for about 5 minutes.}
 \end{location}
 \begin{location}{Knight (Wands)}{Find Something: Goblin Fruit}
 Babel Gum:  For some strange reason, you can no longer read, but you understand any spoken language.  Lasts through this scene.
@@ -91,7 +93,7 @@ Babel Gum:  For some strange reason, you can no longer read, but you understand 
 Wineberry Bush: you are immune to mind altering effects for the remainder of the day.
 \end{location}
 \begin{location}{King (Wands)}{Find Something}
-You find a scroll, a single use item that can increase one ability by two points, for a single test.  The scroll crumbles to dust after being used.
+You find a scroll, a single use item that can increase your total by two points, for a single test.  The scroll crumbles to dust after being used.
 \end{location}
 \begin{location}{Page (Pentacles)}{Hobgoblins!}
 \hobgoblins{Four}{four}{11}
@@ -118,7 +120,7 @@ You suddenly have the feeling that everything is good and right in the world, an
 You are spectacularly lucky: nothing out of the ordinary happens.
 \end{location}
 \begin{location}{Page (Swords)}{Find Something: Goblin Fruit}
-Nightcap, or maybe Buglewort?  Flip a coin.  Heads, your speed is decreased.  Tails, it's increased.
+Nightcap, or maybe Buglewort?  Flip a coin.  Heads, your $\Psi$ (Psi) score increases by 2 instead of the normal 1 for consuming goblin fruit. Tails, your $\Psi$ (Psi) score goes down by one instead!
 \end{location}
 \begin{location}{Knight (Swords)}{Hobgoblins!}
 \hobgoblins{Two}{two}{15}
